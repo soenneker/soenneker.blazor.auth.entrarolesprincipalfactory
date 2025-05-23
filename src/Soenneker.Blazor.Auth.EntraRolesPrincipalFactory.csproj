@@ -44,6 +44,6 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.5" />
         <PackageReference Include="Soenneker.Extensions.IIdentity" Version="3.0.93" />
-        <PackageReference Include="Soenneker.Extensions.ValueTask" Version="3.0.90" />
+        <PackageReference Include="Soenneker.Extensions.ValueTask" Version="3.0.91" />
     </ItemGroup>
 </Project>
