@@ -1,4 +1,4 @@
-﻿using Soenneker.Blazor.Auth.EntraRolesPrincipalFactory.Abstract;
+using Soenneker.Blazor.Auth.EntraRolesPrincipalFactory.Abstract;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
@@ -17,7 +17,7 @@ public sealed class EntraRolesPrincipalFactory : AccountClaimsPrincipalFactory<R
 
     public override async ValueTask<ClaimsPrincipal> CreateUserAsync(RemoteUserAccount account, RemoteAuthenticationUserOptions options)
     {
-        ClaimsPrincipal user = await base.CreateUserAsync(account, options).NoSync();
+        ClaimsPrincipal user = await base.CreateUserAsync(account, options);
 
         user.Identity.AddRolesFromRoles();
 

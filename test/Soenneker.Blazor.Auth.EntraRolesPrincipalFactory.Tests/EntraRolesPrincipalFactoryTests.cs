@@ -1,4 +1,4 @@
-﻿using Soenneker.Blazor.Auth.EntraRolesPrincipalFactory.Abstract;
+using Soenneker.Blazor.Auth.EntraRolesPrincipalFactory.Abstract;
 using Soenneker.Tests.FixturedUnit;
 using Xunit;
 

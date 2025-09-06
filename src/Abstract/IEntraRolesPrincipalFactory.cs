@@ -1,4 +1,4 @@
-﻿namespace Soenneker.Blazor.Auth.EntraRolesPrincipalFactory.Abstract;
+namespace Soenneker.Blazor.Auth.EntraRolesPrincipalFactory.Abstract;
 
 /// <summary>
 /// Customizes Blazor authentication by extending AccountClaimsPrincipalFactory to add standard roles claims from Azure Entra
