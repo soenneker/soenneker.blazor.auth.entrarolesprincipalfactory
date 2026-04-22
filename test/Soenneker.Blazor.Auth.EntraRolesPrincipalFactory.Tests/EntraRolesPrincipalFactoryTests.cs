@@ -1,19 +1,18 @@
 using Soenneker.Blazor.Auth.EntraRolesPrincipalFactory.Abstract;
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Blazor.Auth.EntraRolesPrincipalFactory.Tests;
 
-[Collection("Collection")]
-public class EntraRolesPrincipalFactoryTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class EntraRolesPrincipalFactoryTests : HostedUnitTest
 {
 
-    public EntraRolesPrincipalFactoryTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public EntraRolesPrincipalFactoryTests(Host host) : base(host)
     {
 
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
