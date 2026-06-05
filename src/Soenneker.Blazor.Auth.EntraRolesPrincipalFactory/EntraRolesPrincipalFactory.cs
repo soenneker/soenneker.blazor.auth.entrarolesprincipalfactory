@@ -15,6 +15,12 @@ public sealed class EntraRolesPrincipalFactory : AccountClaimsPrincipalFactory<R
     {
     }
 
+    /// <summary>
+    /// Creates user async.
+    /// </summary>
+    /// <param name="account">The account.</param>
+    /// <param name="options">The options.</param>
+    /// <returns>A task containing the result of the operation.</returns>
     public override async ValueTask<ClaimsPrincipal> CreateUserAsync(RemoteUserAccount account, RemoteAuthenticationUserOptions options)
     {
         ClaimsPrincipal user = await base.CreateUserAsync(account, options);
