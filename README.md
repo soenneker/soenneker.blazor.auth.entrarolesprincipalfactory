@@ -3,11 +3,16 @@
 [![](https://img.shields.io/nuget/dt/soenneker.blazor.auth.entrarolesprincipalfactory.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.blazor.auth.entrarolesprincipalfactory/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.blazor.auth.entrarolesprincipalfactory/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.blazor.auth.entrarolesprincipalfactory/actions/workflows/codeql.yml)
 
-# ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Blazor.Auth.EntraRolesPrincipalFactory
-### Customizes Blazor authentication by extending AccountClaimsPrincipalFactory to add standard roles claims from Azure Entra
+# Soenneker.Blazor.Auth.EntraRolesPrincipalFactory
 
-## Installation
+Customizes Blazor authentication by extending AccountClaimsPrincipalFactory to add standard roles claims from Azure Entra.
 
-```
+## Install
+
+```bash
 dotnet add package Soenneker.Blazor.Auth.EntraRolesPrincipalFactory
 ```
+
+## What you get
+
+- `IEntraRolesPrincipalFactory` — Customizes Blazor authentication by extending AccountClaimsPrincipalFactory to add standard roles claims from Azure Entra.
