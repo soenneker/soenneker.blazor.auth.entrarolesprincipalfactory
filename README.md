@@ -5,14 +5,54 @@
 
 # Soenneker.Blazor.Auth.EntraRolesPrincipalFactory
 
-Customizes Blazor authentication by extending AccountClaimsPrincipalFactory to add standard roles claims from Azure Entra.
+A Blazor WebAssembly account principal factory that converts Microsoft Entra app roles into standard .NET role claims.
 
-## Install
+## Installation
 
 ```bash
 dotnet add package Soenneker.Blazor.Auth.EntraRolesPrincipalFactory
 ```
 
-## What you get
+## Registration
 
-- `IEntraRolesPrincipalFactory` — Customizes Blazor authentication by extending AccountClaimsPrincipalFactory to add standard roles claims from Azure Entra.
+Register the factory on the authentication builder returned by `AddMsalAuthentication`:
+
+```csharp
+using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
+using Soenneker.Blazor.Auth.EntraRolesPrincipalFactory;
+
+builder.Services
+    .AddMsalAuthentication(options =>
+    {
+        builder.Configuration.Bind("AzureAd", options.ProviderOptions.Authentication);
+    })
+    .AddAccountClaimsPrincipalFactory<EntraRolesPrincipalFactory>();
+```
+
+Do not also register another account claims principal factory; the last factory registration controls principal creation.
+
+## Role checks
+
+For an Entra claim shaped like:
+
+```json
+{
+  "roles": ["Administrator", "Billing.Read"]
+}
+```
+
+the factory adds one `ClaimTypes.Role` claim per nonblank value. Blazor authorization can then use the normal role APIs:
+
+```razor
+<AuthorizeView Roles="Administrator">
+    <Authorized>
+        <AdminDashboard />
+    </Authorized>
+</AuthorizeView>
+```
+
+```csharp
+bool isAdministrator = user.IsInRole("Administrator");
+```
+
+Role names are trimmed but otherwise preserved, including casing. Missing or empty `roles` claims add no roles. The package only maps claims already present in the authenticated account; app-role assignment and token emission remain Entra configuration concerns.
