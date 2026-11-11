@@ -48,7 +48,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="11.0.0" />
-        <PackageReference Include="Soenneker.Extensions.IIdentity" Version="11.0.531" />
+        <PackageReference Include="Soenneker.Extensions.IIdentity" Version="11.0.532" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Soenneker.Gen.Web.Minifier" Version="11.0.63" PrivateAssets="all" />
